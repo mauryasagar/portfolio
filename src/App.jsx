@@ -232,7 +232,7 @@ function App() {
               <div className="reveal reveal-button" style={{ animationDelay: '0.12s' }}>
                 <a
                   className="text-link contact-link nav-lift"
-                  href="https://www.linkedin.com/in/sagar-maurya-dev/"
+                  href="https://www.linkedin.com/in/mauryasagar/"
                   target="_blank"
                   rel="noreferrer"
                   aria-label="LinkedIn profile"
