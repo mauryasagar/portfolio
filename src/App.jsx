@@ -119,7 +119,7 @@ function App() {
               Resume
             </a>
             <a
-              className="btn btn-primary reveal reveal-button"
+              className="btn btn-resume reveal reveal-button"
               style={{ animationDelay: '0.18s' }}
               href="#projects"
             >
