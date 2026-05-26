@@ -9,4 +9,4 @@ export const skills = [
   'SQL',
 ];
 
-export const GITHUB_USERNAME = 'SagarXCode';
+export const GITHUB_USERNAME = 'MauryaSagar';

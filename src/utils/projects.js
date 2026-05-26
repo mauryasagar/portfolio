@@ -5,7 +5,7 @@ export const projects = [
     description:
       'A lightweight personal site focused on fast loading, readable design, and clear project storytelling.',
     tech: ['React', 'Vite', 'CSS'],
-    link: 'https://github.com/SagarXCode/portfolio',
+    link: 'https://github.com/MauryaSagar/portfolio',
   },
   {
     id: 2,

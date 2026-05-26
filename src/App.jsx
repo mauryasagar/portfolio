@@ -215,7 +215,7 @@ function App() {
               <div className="reveal reveal-button" style={{ animationDelay: '0.06s' }}>
                 <a
                   className="text-link contact-link nav-lift"
-                  href="https://github.com/SagarXCode"
+                  href="https://github.com/MauryaSagar"
                   target="_blank"
                   rel="noreferrer"
                   aria-label="GitHub profile"
