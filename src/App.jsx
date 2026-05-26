@@ -96,7 +96,7 @@ function App() {
 
       <main className="main-content">
         <section id="home" className="hero reveal" style={{ animationDelay: '0.05s' }}>
-          <p className="eyebrow">Aspiring Software Developer | Java | Data Structures & Algorithms</p>
+          <p className="eyebrow">Aspiring Software Developer</p>
           <h1>Building software with clarity, consistency, and curiosity.</h1>
           <p className="lead">
             I'm a Computer Science student focused on strengthening problem-solving skills, writing
