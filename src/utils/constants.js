@@ -7,6 +7,7 @@ export const skills = [
   'Git',
   'GitHub',
   'SQL',
+  'MS Excel',
 ];
 
 export const GITHUB_USERNAME = 'MauryaSagar';
