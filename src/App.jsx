@@ -96,12 +96,12 @@ function App() {
 
       <main className="main-content">
         <section id="home" className="hero reveal" style={{ animationDelay: '0.05s' }}>
-          <p className="eyebrow">Aspiring Software Developer</p>
-          <h1>Building software with clarity, consistency, and curiosity.</h1>
+          <p className="eyebrow">Aspiring Data Analyst</p>
+          <h1>Turning data into clear insights, decisions, and action.</h1>
           <p className="lead">
-            I'm a Computer Science student focused on strengthening problem-solving skills, writing
-            clean and maintainable code, and building practical projects. I'm also interested in
-            open-source development and exploring how technology works at the system level.
+            I'm a Computer Science student learning Data Analysis and building practical skills in
+            Python, SQL, Excel, Power BI, and data visualization. I enjoy cleaning data, finding
+            patterns, and presenting insights that support better decisions.
           </p>
 
           <div className="hero-actions">
@@ -123,7 +123,7 @@ function App() {
               style={{ animationDelay: '0.18s' }}
               href="#projects"
             >
-              View Projects
+              View Case Studies
             </a>
             <a
               className="btn btn-ghost reveal reveal-button"
@@ -138,7 +138,7 @@ function App() {
         <section id="projects" className="section reveal" style={{ animationDelay: '0.14s' }}>
           <header className="section-header">
             <h2>Projects</h2>
-            <p>Selected work that reflects my current skills and interests.</p>
+            <p>Selected work that reflects my analytical thinking, problem-solving, and curiosity.</p>
           </header>
 
           <div className="projects-grid">
@@ -157,7 +157,7 @@ function App() {
         <section id="skills" className="section reveal" style={{ animationDelay: '0.22s' }}>
           <header className="section-header">
             <h2>Skills</h2>
-            <p>Tools and technologies I use to ship production-ready features.</p>
+            <p>Tools and techniques I use to explore data, build reports, and communicate findings.</p>
           </header>
 
           <div className="skills-wrap">
@@ -204,12 +204,12 @@ function App() {
         <section id="contact" className="section reveal" style={{ animationDelay: '0.32s' }}>
           <header className="section-header">
             <h2>Contact</h2>
-            <p>Let us collaborate on your next web project.</p>
+            <p>Let us collaborate on your next data project.</p>
           </header>
 
           <div className="contact-card">
             <div className="contact-copy">
-              <p>Open to software developer opportunities, internships, and collaborations.</p>
+              <p>Open to data analyst opportunities, internships, dashboards, and collaborations.</p>
             </div>
             <div className="contact-links">
               <div className="reveal reveal-button" style={{ animationDelay: '0.06s' }}>

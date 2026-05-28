@@ -3,12 +3,13 @@ export const skills = [
   'MySQL',
   'Power BI',
   'Excel',
+  'Data Analysis',
+  'Data Cleaning',
+  'Data Visualization',
+  'Statistics',
   'Git',
   'GitHub',
   'Java',
-  'HTML',
-  'CSS',
-  'JavaScript',
 ];
 
 export const GITHUB_USERNAME = 'MauryaSagar';
