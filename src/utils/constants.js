@@ -1,5 +1,6 @@
 export const skills = [
   'Java',
+  'Python',
   'Data Structures',
   'Algorithms',
   'Problem Solving',
