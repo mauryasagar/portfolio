@@ -13,7 +13,7 @@ export const projects = [
     description:
       'A React-based productivity app demonstrating task creation, prioritization, and drag-and-drop workflows. Includes offline support and local persistence for a smooth single-page experience.',
     tech: ['React', 'Drag-and-drop', 'localStorage', 'Accessibility'],
-    link: 'https://github.com/yourusername/task-planner',
+    link: 'In progress or private',
     status: 'In Progress',
   },
   {
@@ -22,7 +22,7 @@ export const projects = [
     description:
       'Responsive weather dashboard that consumes external APIs to deliver real-time forecasts, historical trends, and visual summaries with lightweight charts and caching.',
     tech: ['React', 'Fetch/API', 'Charting', 'Caching'],
-    link: 'https://github.com/yourusername/weather-pulse',
+    link: 'In progress or private',
     status: 'In Progress',
   },
   {
@@ -31,7 +31,7 @@ export const projects = [
     description:
       'A collection of data analysis notebooks and scripts showcasing data cleaning, exploratory analysis, statistical summaries, and visualization using real-world datasets.',
     tech: ['Python', 'Pandas', 'Jupyter', 'Matplotlib'],
-    link: 'https://github.com/yourusername/data-analysis',
+    link: 'In progress or private',
     status: 'Private',
   },
 ];
