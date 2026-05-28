@@ -11,16 +11,24 @@ export const projects = [
     id: 2,
     title: 'Task Planner',
     description:
-      'A simple productivity app that demonstrates process organization, structured thinking, and clean workflows.',
-    tech: ['Organization', 'Workflow', 'Problem Solving'],
-    link: '#',
+      'A React-based productivity app demonstrating task creation, prioritization, and drag-and-drop workflows. Includes offline support and local persistence for a smooth single-page experience.',
+    tech: ['React', 'Drag-and-drop', 'localStorage', 'Accessibility'],
+    link: 'https://github.com/yourusername/task-planner',
   },
   {
     id: 3,
     title: 'Weather Pulse',
     description:
-      'A dashboard-style project that highlights concise information delivery and data presentation habits.',
-    tech: ['Dashboard', 'Visualization', 'Reporting'],
-    link: '#',
+      'Responsive weather dashboard that consumes external APIs to deliver real-time forecasts, historical trends, and visual summaries with lightweight charts and caching.',
+    tech: ['React', 'Fetch/API', 'Charting', 'Caching'],
+    link: 'https://github.com/yourusername/weather-pulse',
+  },
+  {
+    id: 4,
+    title: 'Data Analysis',
+    description:
+      'A collection of data analysis notebooks and scripts showcasing data cleaning, exploratory analysis, statistical summaries, and visualization using real-world datasets.',
+    tech: ['Python', 'Pandas', 'Jupyter', 'Matplotlib'],
+    link: 'https://github.com/yourusername/data-analysis',
   },
 ];
