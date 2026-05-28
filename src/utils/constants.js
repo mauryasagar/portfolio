@@ -1,14 +1,14 @@
 export const skills = [
-  'Java',
   'Python',
-  'Data Structures',
-  'Algorithms',
-  'Problem Solving',
-  'Spring Boot',
+  'MySQL',
+  'Power BI',
+  'Excel',
   'Git',
   'GitHub',
-  'SQL',
-  'MS Excel',
+  'Java',
+  'HTML',
+  'CSS',
+  'JavaScript',
 ];
 
 export const GITHUB_USERNAME = 'MauryaSagar';
