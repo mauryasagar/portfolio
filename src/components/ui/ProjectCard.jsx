@@ -1,7 +1,11 @@
 import SkillBadge from './SkillBadge';
 
 const ProjectCard = ({ project }) => {
-  const hasLink = Boolean(project.link && project.link !== '#');
+  const hasLink = Boolean(
+    project.link &&
+      project.link !== '#' &&
+      project.link !== 'In progress or private'
+  );
 
   return (
     <article className="project-card">
@@ -23,7 +27,7 @@ const ProjectCard = ({ project }) => {
           </svg>
         </a>
       ) : (
-        <span className="project-link muted">Private or in progress</span>
+        <span className="project-link muted">In progress or private</span>
       )}
     </article>
   );
