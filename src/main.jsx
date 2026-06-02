@@ -10,7 +10,7 @@ You're curious. I like that.
 Let's be friends ↓
 
 github.com/mauryasagar`, 
-  "color: #00FFFF; font-size: 14px; text-shadow: 0 0 0px #00FFFF;"
+  "color: #00FFFF; font-size: 16px; text-shadow: 0 0 4px #00FFFF;"
 );
 
 
