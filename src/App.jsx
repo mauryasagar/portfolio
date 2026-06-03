@@ -22,43 +22,12 @@ const getInitialTheme = () => {
 
 function App() {
   const [theme, setTheme] = useState(getInitialTheme);
-  const [isResumeOpen, setIsResumeOpen] = useState(false);
   const resumeUrl = `${import.meta.env.BASE_URL}assets/resume/resume.pdf`;
 
   useEffect(() => {
     document.documentElement.setAttribute('data-theme', theme);
     window.localStorage.setItem('theme', theme);
   }, [theme]);
-
-  useEffect(() => {
-    if (!isResumeOpen) {
-      return undefined;
-    }
-
-    const previousOverflow = document.body.style.overflow;
-    document.body.style.overflow = 'hidden';
-
-    const handleKeyDown = (event) => {
-      const key = event.key.toLowerCase();
-      const isModifierShortcut = event.ctrlKey || event.metaKey;
-
-      if (key === 'escape') {
-        setIsResumeOpen(false);
-        return;
-      }
-
-      if (isModifierShortcut && ['p', 's', 'u'].includes(key)) {
-        event.preventDefault();
-      }
-    };
-
-    window.addEventListener('keydown', handleKeyDown);
-
-    return () => {
-      document.body.style.overflow = previousOverflow;
-      window.removeEventListener('keydown', handleKeyDown);
-    };
-  }, [isResumeOpen]);
 
   useEffect(() => {
     const cardSelector = '.project-card, .activity-card, .contact-card';
@@ -121,14 +90,6 @@ function App() {
     setTheme((currentTheme) => (currentTheme === 'light' ? 'dark' : 'light'));
   };
 
-  const openResumePreview = () => {
-    setIsResumeOpen(true);
-  };
-
-  const closeResumePreview = () => {
-    setIsResumeOpen(false);
-  };
-
   return (
     <div className="site-shell">
       <Navbar theme={theme} onToggleTheme={handleThemeToggle} />
@@ -144,14 +105,15 @@ function App() {
           </p>
 
           <div className="hero-actions">
-            <button
-              type="button"
+            <a
               className="btn btn-resume reveal reveal-button"
               style={{ animationDelay: '0.12s' }}
-              onClick={openResumePreview}
+              href={resumeUrl}
+              target="_blank"
+              rel="noopener noreferrer"
             >
               Resume
-            </button>
+            </a>
             <a
               className="btn btn-resume reveal reveal-button"
               style={{ animationDelay: '0.18s' }}
@@ -281,52 +243,26 @@ function App() {
               </div>
 
               <div className="reveal reveal-button" style={{ animationDelay: '0.18s' }}>
-                <button
-                  type="button"
+                <a
                   className="text-link contact-link nav-lift"
-                  onClick={openResumePreview}
-                  aria-label="Open resume preview"
+                  href={resumeUrl}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  aria-label="Resume"
                 >
                   <span className="contact-link-icon-wrap" aria-hidden="true">
-                    <svg className="contact-link-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
-                      <path d="M4 19.5V5.5A1.5 1.5 0 0 1 5.5 4H14l5 5v10.5A1.5 1.5 0 0 1 17.5 21h-12A1.5 1.5 0 0 1 4 19.5Z" />
-                      <path d="M14 4v5h5" />
-                      <path d="M8 12h8" />
-                      <path d="M8 15.5h8" />
+                    <svg className="contact-link-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true">
+                      <path d="M12 15V3m0 12-4-4m4 4 4-4" />
+                      <path d="M2 17l.621 2.485A2 2 0 0 0 4.561 21h14.878a2 2 0 0 0 1.94-1.515L22 17" />
                     </svg>
                   </span>
                   <span>Resume</span>
-                </button>
+                </a>
               </div>
             </div>
           </div>
         </section>
       </main>
-
-      {isResumeOpen && (
-        <div className="resume-modal" role="presentation" onClick={closeResumePreview}>
-          <button type="button" className="resume-close-btn resume-close-btn-overlay" onClick={closeResumePreview} aria-label="Close resume preview">
-            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true">
-              <path d="M18 6 6 18M6 6l12 12" />
-            </svg>
-          </button>
-
-          <div
-            className="resume-viewer-shell resume-viewer-shell--flat"
-            onContextMenu={(event) => event.preventDefault()}
-            role="dialog"
-            aria-modal="true"
-            aria-label="Resume preview"
-          >
-            <iframe
-              className="resume-viewer"
-              title="Resume preview"
-              src={`${resumeUrl}#view=FitH&toolbar=0&navpanes=0&scrollbar=0`}
-              tabIndex="-1"
-            />
-          </div>
-        </div>
-      )}
 
       <Footer />
     </div>
