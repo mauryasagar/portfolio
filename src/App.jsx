@@ -22,7 +22,8 @@ const getInitialTheme = () => {
 
 function App() {
   const [theme, setTheme] = useState(getInitialTheme);
-  const resumeUrl = `${import.meta.env.BASE_URL}assets/resume/resume.pdf`;
+  const resumeVersion = '20260603';
+  const resumeUrl = `${import.meta.env.BASE_URL}assets/resume/resume.pdf?v=${resumeVersion}`;
 
   useEffect(() => {
     document.documentElement.setAttribute('data-theme', theme);
