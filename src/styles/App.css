@@ -736,9 +736,14 @@ a {
 }
 
 .contact-links {
-    display: flex;
+    width: 100%;
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
     gap: 0.8rem;
-    flex-wrap: wrap;
+}
+
+.contact-links .reveal {
+    display: flex;
 }
 
 :root[data-theme='dark'] .project-card:hover,
@@ -864,6 +869,8 @@ a {
 
 .contact-link {
     color: var(--text);
+    width: 100%;
+    justify-content: center;
 }
 
 .contact-link:hover,
@@ -1062,9 +1069,10 @@ a {
 
     .contact-links {
         width: 100%;
+        grid-template-columns: 1fr;
     }
 
-    .text-link {
+    .contact-links .text-link {
         width: 100%;
         justify-content: center;
     }
