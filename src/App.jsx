@@ -4,6 +4,7 @@ import Footer from './components/layout/Footer';
 import ProjectCard from './components/ui/ProjectCard';
 import SkillBadge from './components/ui/SkillBadge';
 import GitHubContributionCalendar from './components/ui/GitHubContributionCalendar';
+import BlogSection from './components/ui/BlogSection';
 import { GITHUB_USERNAME, skills } from './utils/constants';
 import { projects } from './utils/projects';
 
@@ -116,15 +117,8 @@ function App() {
               Resume
             </a>
             <a
-              className="btn btn-resume reveal reveal-button"
-              style={{ animationDelay: '0.18s' }}
-              href="#projects"
-            >
-              View Case Studies
-            </a>
-            <a
               className="btn btn-ghost reveal reveal-button"
-              style={{ animationDelay: '0.24s' }}
+              style={{ animationDelay: '0.18s' }}
               href="#contact"
             >
               Contact
@@ -197,6 +191,8 @@ function App() {
             <p className="education-years">2023 - 2027</p>
           </article>
         </section>
+
+        <BlogSection />
 
         <section id="contact" className="section reveal" style={{ animationDelay: '0.32s' }}>
           <header className="section-header">

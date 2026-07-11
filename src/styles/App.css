@@ -1148,3 +1148,96 @@ a {
 .reveal-button {
     animation-duration: 0.58s;
 }
+
+/* ── Blog section ── */
+
+/* Lock title to 2 lines height so cards stay uniform regardless of title length */
+#blog .project-title {
+    min-height: calc(1.03rem * 1.2 * 2);
+}
+
+.blog-title-group {
+    display: flex;
+    flex-direction: column;
+    gap: 0.25rem;
+}
+
+.blog-title-group .project-title {
+    min-height: 0;
+}
+
+.blog-post-date {
+    margin: 0;
+    color: var(--muted);
+    font-size: 0.78rem;
+    font-weight: 600;
+    letter-spacing: 0.01em;
+}
+
+.blog-error {
+    margin-top: 0.95rem;
+    color: var(--muted);
+    font-size: 0.9rem;
+    display: flex;
+    align-items: center;
+    gap: 0.38rem;
+}
+
+.blog-loading-grid {
+    pointer-events: none;
+}
+
+.blog-skeleton {
+    gap: 0.58rem;
+    animation: blog-pulse 1.6s ease-in-out infinite;
+}
+
+.blog-skeleton-date {
+    height: 0.72rem;
+    border-radius: 6px;
+    background: var(--line);
+    width: 36%;
+    opacity: 0.55;
+}
+
+.blog-skeleton-title {
+    height: 1.1rem;
+    border-radius: 6px;
+    background: var(--line);
+    width: 72%;
+}
+
+.blog-skeleton-line {
+    height: 0.82rem;
+    border-radius: 6px;
+    background: var(--line);
+    opacity: 0.65;
+    width: 100%;
+}
+
+.blog-skeleton-line--short {
+    width: 55%;
+}
+
+.blog-skeleton-tags {
+    display: flex;
+    gap: 0.34rem;
+}
+
+.blog-skeleton-tag {
+    height: 1.55rem;
+    width: 3.8rem;
+    border-radius: 999px;
+    background: var(--line);
+    opacity: 0.5;
+}
+
+@keyframes blog-pulse {
+    0%,
+    100% {
+        opacity: 1;
+    }
+    50% {
+        opacity: 0.42;
+    }
+}
