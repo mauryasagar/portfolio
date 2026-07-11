@@ -91,7 +91,9 @@ a {
     z-index: 20;
     border-bottom: 1px solid var(--line);
     background: var(--topbar-bg);
-    backdrop-filter: blur(10px);
+    backdrop-filter: blur(5px);
+    -webkit-backdrop-filter: blur(5px);
+    will-change: transform;
     box-shadow: 0 14px 30px -28px var(--shadow-color);
 }
 
@@ -364,15 +366,6 @@ a {
     transition: all 0.2s ease;
 }
 
-.btn-primary {
-    background: var(--accent);
-    border-color: var(--accent);
-    color: #f7fffe;
-}
-
-.btn-primary:hover {
-    filter: brightness(1.05);
-}
 
 .btn-ghost {
     border-color: var(--line);
@@ -408,13 +401,6 @@ a {
     background: rgba(255, 255, 255, 0.12);
 }
 
-.btn-icon {
-    width: 1rem;
-    height: 1rem;
-    flex: 0 0 auto;
-    display: block;
-    transition: color 0.2s ease;
-}
 
 .section {
     padding: 2.6rem 0;
@@ -422,9 +408,6 @@ a {
     scroll-margin-top: clamp(7.2rem, 16vh, 10.5rem);
 }
 
-#home {
-    scroll-margin-top: 0;
-}
 
 .section-header h2 {
     margin: 0;
@@ -660,14 +643,13 @@ a {
 
 .calendar-widget .react-activity-calendar rect {
     rx: 2px;
-    transition: transform 0.16s ease, filter 0.16s ease, stroke 0.16s ease;
+    transition: transform 0.16s ease, stroke 0.16s ease;
     transform-box: fill-box;
     transform-origin: center;
 }
 
 .calendar-widget .react-activity-calendar rect:hover {
     transform: translateY(-2px);
-    filter: brightness(1.08);
     stroke: rgba(255, 255, 255, 0.45);
     stroke-width: 0.5px;
 }
@@ -952,18 +934,27 @@ a {
     transform: translateY(-2px);
 }
 
-.reveal {
-    opacity: 0;
-    transform: translateY(16px);
-    animation: reveal 0.64s cubic-bezier(0.2, 0.8, 0.2, 1) forwards;
-}
-
 @keyframes reveal {
     to {
         opacity: 1;
         transform: translateY(0);
     }
 }
+
+/* Page-load animation — scoped to above-the-fold elements only */
+.topbar .reveal,
+.hero.reveal,
+.hero .reveal {
+    opacity: 0;
+    transform: translateY(16px);
+    animation: reveal 0.64s cubic-bezier(0.2, 0.8, 0.2, 1) forwards;
+}
+
+.topbar .reveal-button,
+.hero .reveal-button {
+    animation-duration: 0.58s;
+}
+
 
 @media (max-width: 900px) {
     .projects-grid {
@@ -1145,16 +1136,10 @@ a {
     }
 }
 
-.reveal-button {
-    animation-duration: 0.58s;
-}
+
 
 /* ── Blog section ── */
 
-/* Lock title to 2 lines height so cards stay uniform regardless of title length */
-#blog .project-title {
-    min-height: calc(1.03rem * 1.2 * 2);
-}
 
 .blog-title-group {
     display: flex;
