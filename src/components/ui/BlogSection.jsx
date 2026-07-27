@@ -12,6 +12,12 @@ const formatDate = (iso) => {
   });
 };
 
+const decodeHtml = (str) => {
+  if (!str) return '';
+  const doc = new DOMParser().parseFromString(str, 'text/html');
+  return doc.body.textContent || '';
+};
+
 const ArrowSvg = () => (
   <svg
     className="project-link-arrow"
@@ -93,6 +99,8 @@ export default function BlogSection() {
           {posts.map((post, index) => {
             const tags = Array.isArray(post.tag_list) ? post.tag_list.slice(0, 3) : [];
             const date = formatDate(post.published_at);
+            const title = decodeHtml(post.title);
+            const description = decodeHtml(post.description);
 
             return (
               <div
@@ -105,16 +113,16 @@ export default function BlogSection() {
                   href={post.url}
                   target="_blank"
                   rel="noreferrer"
-                  aria-label={`Read post: ${post.title}`}
+                  aria-label={`Read post: ${title}`}
                 >
                   {/* Title + date group */}
                   <div className="blog-title-group">
-                    <h3 className="project-title">{post.title}</h3>
+                    <h3 className="project-title">{title}</h3>
                     {date && <p className="blog-post-date">{date}</p>}
                   </div>
 
                   {/* Description */}
-                  <p className="project-description">{post.description}</p>
+                  <p className="project-description">{description}</p>
 
                   {/* Tags */}
                   {tags.length > 0 && (
