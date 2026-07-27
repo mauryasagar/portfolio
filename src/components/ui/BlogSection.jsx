@@ -1,6 +1,6 @@
 import { useEffect, useState } from 'react';
 
-const DEV_TO_API = 'https://dev.to/api/articles?username=sagarmaurya&per_page=3';
+const DEV_TO_API = 'https://dev.to/api/articles?username=sagarmaurya&per_page=10';
 const DEV_TO_PROFILE = 'https://dev.to/sagarmaurya';
 
 const formatDate = (iso) => {
@@ -42,7 +42,7 @@ export default function BlogSection() {
       })
       .then((data) => {
         if (cancelled) return;
-        setPosts(data);
+        setPosts(Array.isArray(data) ? data.slice(0, 3) : []);
         setStatus('success');
       })
       .catch(() => {
