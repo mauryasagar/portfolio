@@ -679,6 +679,7 @@ a {
     color: var(--muted);
     font-size: 0.97rem;
     font-weight: 600;
+    font-style: italic;
 }
 
 .education-years {
@@ -1225,4 +1226,4 @@ a {
     50% {
         opacity: 0.42;
     }
-}
+}

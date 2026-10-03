@@ -9,7 +9,6 @@ export const skills = [
   'Statistics',
   'Git',
   'GitHub',
-  'Java',
 ];
 
 export const GITHUB_USERNAME = 'MauryaSagar';
