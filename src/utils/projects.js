@@ -25,13 +25,4 @@ export const projects = [
     link: 'In progress or private',
     status: 'In Progress',
   },
-  {
-    id: 4,
-    title: 'Data Analysis',
-    description:
-      'A collection of data analysis notebooks and scripts showcasing data cleaning, exploratory analysis, statistical summaries, and visualization using real-world datasets.',
-    tech: ['Python', 'Pandas', 'Jupyter', 'Matplotlib'],
-    link: 'In progress or private',
-    status: 'Private',
-  },
 ];
