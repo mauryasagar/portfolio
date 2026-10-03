@@ -1261,6 +1261,30 @@ a {
     gap: 0.38rem;
 }
 
+.blog-view-all-wrap {
+    margin-top: 1rem;
+    display: flex;
+    justify-content: flex-end;
+}
+
+.blog-view-all {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.38rem;
+    color: var(--accent);
+    font-weight: 700;
+    font-size: 0.9rem;
+    text-decoration: none;
+    transition: gap 0.18s ease, opacity 0.18s ease;
+}
+
+.blog-view-all:hover,
+.blog-view-all:focus-visible {
+    gap: 0.52rem;
+    opacity: 0.92;
+    outline: none;
+}
+
 .blog-loading-grid {
     pointer-events: none;
 }

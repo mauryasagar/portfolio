@@ -95,57 +95,66 @@ export default function BlogSection() {
       )}
 
       {status === 'success' && (
-        <div className="projects-grid">
-          {posts.map((post, index) => {
-            const tags = Array.isArray(post.tag_list) ? post.tag_list.slice(0, 3) : [];
-            const date = formatDate(post.published_at);
-            const title = decodeHtml(post.title);
-            const description = decodeHtml(post.description);
+        <>
+          <div className="projects-grid">
+            {posts.map((post, index) => {
+              const tags = Array.isArray(post.tag_list) ? post.tag_list.slice(0, 3) : [];
+              const date = formatDate(post.published_at);
+              const title = decodeHtml(post.title);
+              const description = decodeHtml(post.description);
 
-            return (
-              <div
-                key={post.id}
-                className="reveal"
-                style={{ animationDelay: `${0.36 + index * 0.08}s` }}
-              >
-                <a
-                  className="project-card"
-                  href={post.url}
-                  target="_blank"
-                  rel="noreferrer"
-                  aria-label={`Read post: ${title}`}
+              return (
+                <div
+                  key={post.id}
+                  className="reveal"
+                  style={{ animationDelay: `${0.36 + index * 0.08}s` }}
                 >
-                  {/* Title + date group */}
-                  <div className="blog-title-group">
-                    <h3 className="project-title">{title}</h3>
-                    {date && <p className="blog-post-date">{date}</p>}
-                  </div>
-
-                  {/* Description */}
-                  <p className="project-description">{description}</p>
-
-                  {/* Tags */}
-                  {tags.length > 0 && (
-                    <div className="project-tech" aria-label="Post tags">
-                      {tags.map((tag) => (
-                        <span key={tag} className="skill-badge">
-                          {tag}
-                        </span>
-                      ))}
+                  <a
+                    className="project-card"
+                    href={post.url}
+                    target="_blank"
+                    rel="noreferrer"
+                    aria-label={`Read post: ${title}`}
+                  >
+                    {/* Title + date group */}
+                    <div className="blog-title-group">
+                      <h3 className="project-title">{title}</h3>
+                      {date && <p className="blog-post-date">{date}</p>}
                     </div>
-                  )}
 
-                  {/* Read link — visual only; the whole card is the link */}
-                  <span className="project-link" aria-hidden="true">
-                    Read post
-                    <ArrowSvg />
-                  </span>
-                </a>
-              </div>
-            );
+                    {/* Description */}
+                    <p className="project-description">{description}</p>
 
-          })}
-        </div>
+                    {/* Tags */}
+                    {tags.length > 0 && (
+                      <div className="project-tech" aria-label="Post tags">
+                        {tags.map((tag) => (
+                          <span key={tag} className="skill-badge">
+                            {tag}
+                          </span>
+                        ))}
+                      </div>
+                    )}
+
+                    {/* Read link — visual only; the whole card is the link */}
+                    <span className="project-link" aria-hidden="true">
+                      Read post
+                      <ArrowSvg />
+                    </span>
+                  </a>
+                </div>
+              );
+
+            })}
+          </div>
+
+          <div className="blog-view-all-wrap">
+            <a href={DEV_TO_PROFILE} className="blog-view-all" target="_blank" rel="noreferrer">
+              View all blogs
+              <ArrowSvg />
+            </a>
+          </div>
+        </>
       )}
     </section>
   );
