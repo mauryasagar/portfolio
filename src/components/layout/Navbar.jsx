@@ -1,3 +1,5 @@
+import { useEffect, useRef, useState } from 'react';
+
 const links = [
   { href: '#home', label: 'Home' },
   { href: '#projects', label: 'Projects' },
@@ -7,6 +9,31 @@ const links = [
 ];
 
 export default function Navbar({ theme, onToggleTheme }) {
+  const [menuOpen, setMenuOpen] = useState(false);
+  const navbarRef = useRef(null);
+
+  useEffect(() => {
+    if (!menuOpen) {
+      return undefined;
+    }
+
+    const handleOutsideClick = (event) => {
+      if (!navbarRef.current) {
+        return;
+      }
+
+      if (!navbarRef.current.contains(event.target)) {
+        setMenuOpen(false);
+      }
+    };
+
+    document.addEventListener('pointerdown', handleOutsideClick);
+
+    return () => {
+      document.removeEventListener('pointerdown', handleOutsideClick);
+    };
+  }, [menuOpen]);
+
   const getScrollBehavior = () => {
     if (window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
       return 'auto';
@@ -21,11 +48,13 @@ export default function Navbar({ theme, onToggleTheme }) {
     if (href === '#home') {
       window.scrollTo({ top: 0, behavior });
       window.history.replaceState(null, '', window.location.pathname + window.location.search);
+      setMenuOpen(false);
       return;
     }
 
     const targetSection = document.querySelector(href);
     if (!targetSection) {
+      setMenuOpen(false);
       return;
     }
 
@@ -56,6 +85,7 @@ export default function Navbar({ theme, onToggleTheme }) {
 
         window.scrollTo({ top: projectsTargetTop, behavior });
         window.history.replaceState(null, '', href);
+        setMenuOpen(false);
         return;
       }
     }
@@ -68,6 +98,7 @@ export default function Navbar({ theme, onToggleTheme }) {
 
     window.scrollTo({ top: targetTop, behavior });
     window.history.replaceState(null, '', href);
+    setMenuOpen(false);
   };
 
   const handleBrandClick = () => {
@@ -82,7 +113,7 @@ export default function Navbar({ theme, onToggleTheme }) {
   const nextTheme = theme === 'light' ? 'dark' : 'light';
 
   return (
-    <header className="topbar">
+    <header ref={navbarRef} className="topbar">
       <div className="topbar-inner">
         <div className="reveal reveal-button" style={{ animationDelay: '0.04s' }}>
           <button
@@ -99,7 +130,7 @@ export default function Navbar({ theme, onToggleTheme }) {
         </div>
 
         <div className="topbar-right">
-          <nav aria-label="Primary">
+          <nav aria-label="Primary" className="desktop-nav">
             <ul className="topnav">
               {links.map((link, index) => (
                 <li key={link.href}>
@@ -116,6 +147,19 @@ export default function Navbar({ theme, onToggleTheme }) {
               ))}
             </ul>
           </nav>
+
+          <button
+            type="button"
+            className="mobile-menu-toggle"
+            onClick={() => setMenuOpen((open) => !open)}
+            aria-label={menuOpen ? 'Close menu' : 'Open menu'}
+            aria-expanded={menuOpen}
+            aria-controls="mobile-menu"
+          >
+            <span />
+            <span />
+            <span />
+          </button>
 
           <div className="theme-toggle-wrap reveal reveal-button" style={{ animationDelay: '0.29s' }}>
             <button
@@ -151,6 +195,23 @@ export default function Navbar({ theme, onToggleTheme }) {
           </div>
         </div>
       </div>
+
+      {menuOpen && (
+        <nav id="mobile-menu" className="mobile-nav" aria-label="Mobile navigation">
+          <ul className="mobile-nav-list">
+            {links.map((link) => (
+              <li key={link.href}>
+                <a
+                  href={link.href}
+                  onClick={(event) => handleNavLinkClick(event, link.href)}
+                >
+                  {link.label}
+                </a>
+              </li>
+            ))}
+          </ul>
+        </nav>
+      )}
     </header>
   );
 }
