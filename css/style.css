@@ -113,7 +113,7 @@ section{padding:clamp(1.75rem,5vw,3.25rem) 0}
 .wr-list li:first-child::before{background:var(--fg);border-color:var(--fg);box-shadow:0 0 0 6px color-mix(in srgb,var(--fg) 12%,transparent)}
 
 .wr-list a{display:block;transition:opacity .3s}
-.wr-list:hover a{opacity:.32}
+@media (hover:hover){.wr-list:hover a{opacity:.32}}
 .wr-list a:hover,.wr-list a:focus-visible{opacity:1}
 .wr-line{display:flex;align-items:baseline;gap:.7rem}
 .wr-list h3{font-family:var(--serif);font-weight:400;font-size:clamp(1.4rem,2.6vw,2rem);letter-spacing:-.01em;line-height:1.1}
@@ -183,8 +183,11 @@ nav{display:flex;justify-content:space-between;align-items:center;gap:1rem;flex-
 .pj span{color:var(--muted);font-size:.8125rem;line-height:1.6}
 
 .pj li{transition:opacity .3s}
-.pj:hover li{opacity:.32}
-.pj:hover li:hover,.pj li:focus-within{opacity:1}
+@media (hover:hover){
+  .pj:hover li{opacity:.32}
+  .pj:hover li:hover{opacity:1}
+}
+.pj li:focus-within{opacity:1}
 
 .pj li.has-link{padding:0}
 .pj li.has-link::after{display:none}
@@ -243,3 +246,36 @@ footer{-webkit-font-smoothing:antialiased;display:flex;justify-content:space-bet
 
 /* Assets */
 .cb .dev{background:url("../assets/devto.png") center/100% 100% no-repeat}
+
+/* Phones */
+@media (max-width:34.99rem){
+  html{font-size:15px}
+
+  nav{row-gap:0;padding-block:calc(1rem + env(safe-area-inset-top)) .5rem;font-size:.8125rem}
+  .links a{padding-block:.5rem}
+
+  .hero{padding:2rem 0 2.25rem}
+  .hero p{font-size:1rem;line-height:1.55;margin-top:1rem}
+  .btns{margin-top:1.375rem;gap:.5rem}
+  .b1,.b2{padding:.625rem 1.125rem;font-size:.875rem}
+
+  .edu i{font-size:1.2rem}
+  .pj li.has-link a{padding:.875rem 0}
+
+  .writing .card{padding:1.375rem 1.25rem;border-radius:1.75rem}
+  .wr-lay{gap:1.5rem}
+  .wr-side{gap:.875rem}
+  .wr-side h2{font-size:2.25rem}
+  .wr-list{padding-left:1.75rem}
+  .wr-list::before{left:.4rem}
+  .wr-list li::before{left:-1.75rem;width:.8rem;height:.8rem}
+  .wr-list li{padding-bottom:1.25rem}
+  .wr-line{flex-direction:column;align-items:flex-start;gap:.125rem}
+  .wr-lead{display:none}
+  .wr-date{order:-1;width:auto;text-align:left;font-size:1rem}
+  .wr-list h3{font-size:1.3rem}
+  .wr-list p{font-size:.8125rem}
+
+  .cb{height:2.5rem;font-size:.8125rem}
+  footer{font-size:.8rem}
+}
