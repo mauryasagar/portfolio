@@ -130,8 +130,8 @@ section{padding:clamp(1.75rem,5vw,3.25rem) 0}
 
 /* Navbar */
 nav{display:flex;justify-content:space-between;align-items:center;gap:1rem;flex-wrap:wrap;
-  padding:calc(1.375rem + env(safe-area-inset-top)) 0 1.375rem;font-family:var(--poppins);font-size:.75rem;font-weight:400;-webkit-font-smoothing:antialiased}
-.logo{font-weight:400}
+  padding:calc(1.375rem + env(safe-area-inset-top)) 0 1.375rem;font-family:var(--poppins);font-size:.75rem;font-weight:500;-webkit-font-smoothing:antialiased}
+.logo{font-weight:500}
 .logo .dot{color:var(--muted)}
 @media(min-width:35rem){.logo{margin-left:2.1875rem}}
 
@@ -161,10 +161,10 @@ nav{display:flex;justify-content:space-between;align-items:center;gap:1rem;flex-
 
 /* Hero */
 .hero{padding:clamp(3rem,9vw,6.875rem) 0 clamp(2.5rem,7vw,5rem);text-align:center}
-.hero h1{font-size:min(clamp(2.2rem,.9rem + 6.55vw,5.25rem),calc((100vw - 2*var(--gut))/9.4));font-weight:600;letter-spacing:-.04em;line-height:1.02;
-  width:max-content;position:relative;left:50%;transform:translateX(-50%)}
-.hero h1 span{display:block;white-space:nowrap}
-.hero p{color:var(--muted);font-size:1.0625rem;line-height:1.6;max-width:46ch;margin:1.125rem auto 0}
+.hero h1{font-family:var(--serif);font-size:min(clamp(3.25rem,1rem + 8vw,9rem),calc((100vw - 2*var(--gut))/5.4));font-weight:400;letter-spacing:-.01em;line-height:1;white-space:nowrap;-webkit-text-stroke:.02em currentColor}
+.hero h1 i{font-style:italic}
+.hero p{color:var(--muted);font-size:clamp(1.0625rem,.95rem + .35vw,1.3rem);line-height:1.6;max-width:60ch;margin:1.125rem auto 0}
+.hero p+p{margin-top:.5rem}
 .btns{display:flex;justify-content:center;gap:.625rem;flex-wrap:wrap;margin-top:1.625rem}
 .b1,.b2{padding:.5625rem 1.125rem;border:1px solid var(--fg);border-radius:99px;font-size:.8125rem;font-weight:500}
 .b1{background:var(--fg-i);border-color:var(--fg-i);color:var(--bg-i);
@@ -221,7 +221,7 @@ nav{display:flex;justify-content:space-between;align-items:center;gap:1rem;flex-
 
 footer{-webkit-font-smoothing:antialiased;display:flex;justify-content:space-between;flex-wrap:wrap;gap:.75rem;
   padding:1.375rem 0 calc(1.75rem + env(safe-area-inset-bottom));border-top:1px solid var(--line);
-  font-family:var(--poppins);font-weight:400;font-size:.75rem;color:var(--fg)}
+  font-family:var(--poppins);font-weight:500;font-size:.75rem;color:var(--fg)}
 
 /* Device Adaptations */
 
