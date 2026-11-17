@@ -1,2 +1,2 @@
 /* Restore saved light/dark theme before first paint */
-try{if(localStorage.getItem("theme")==="dark")document.documentElement.dataset.mode="dark"}catch(e){}
+try{if(localStorage.getItem("theme")!=="light")document.documentElement.dataset.mode="dark"}catch(e){document.documentElement.dataset.mode="dark"}
